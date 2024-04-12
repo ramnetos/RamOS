@@ -1,2 +1,2 @@
 # RamOS
-Further developments into a web operating system.
+Empty as of now, not much work has been done.
