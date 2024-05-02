@@ -1,92 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RamOS Web | Early Access</title>
     <link rel="icon" href="https://raw.githubusercontent.com/theshmunguss1/RamOS/main/images/favicon.ico">
     <style>
-        h1 {
-            text-align: center;
+        body {
+            background-color: #212121;
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
         }
-        p {
-            text-align: center;
-        }
-        div {
+        h1, p, div {
             text-align: center;
         }
         #logo {
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
             width: 50%;
-        }
-        #main-text {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: white;
-        }
-        body {
-            background-color: #212121;
         }
         a {
             text-decoration: none;
             color: inherit;
         }
+        .taskbar {
+            background-color: #333;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Verdana, sans-serif;
+            color: #fff;
+            text-decoration: none;
+        }
+        .taskbar .task {
+            margin: 0 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #555;
+            cursor: pointer;
+        }
+        .taskbar .task:hover {
+            background-color: #777;
+        }
     </style>
 </head>
 <body>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>RamOS Web | Early Access</title>
-    </head>
-    <body>
-        <p>
-            <p id="main-text">Welcome to the earliest true version of RamOS. Please explore the small site, but expect bugs and errors... please report them once they are found.</p>
-            <img src="logo.png" alt="RamWorks logo" id="logo">
-            <p id="main-text"><i>RamOS Web Early Access v1.0.1</i></p>   
-    </body>
-    <ul>
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-            }
+    <h1>Welcome to the earliest true version of RamOS</h1>
+    <p>Please explore the small site, but expect bugs and errors... please report them once they are found.</p>
+    <img src="logo.png" alt="RamWorks logo" id="logo">
+    <p><i>RamOS Web Early Access v1.0.1</i></p>
 
-            .taskbar {
-                background-color: #333;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 50px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-family: Verdana, sans-serif;
-                color: #fff;
-                text-decoration: none;
-            }
-
-            .taskbar .task {
-                margin: 0 10px;
-                padding: 10px;
-                border-radius: 5px;
-                background-color: #555;
-                cursor: pointer;
-
-            }
-
-            .taskbar .task:hover {
-                background-color: #777;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="taskbar">
-            <p id="taskbar"><a href="astroidv3.html" class="task">Astroid</a>
-            <p id="taskbar"><a href="dogeub4.html" class="task">Doge Unblocker</a>
-            <p id="taskbar"><a href="incognito.html" class="task">Incognito</a>
-            <p id="taskbar"><a href="graphing.html" class="task">Graphing Calculator</a>
-
-        </div>
-    </ul>
+    <div class="taskbar">
+        <a href="astroidv3.html" class="task">Astroid</a>
+        <a href="dogeub4.html" class="task">Doge Unblocker</a>
+        <a href="incognito.html" class="task">Incognito</a>
+        <a href="graphing.html" class="task">Graphing Calculator</a>
+    </div>
+</body>
 </html>
