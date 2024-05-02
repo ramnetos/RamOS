@@ -1,91 +1,87 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="icon" href="https://raw.githubusercontent.com/theshmunguss1/RamOS/main/images/favicon.ico">
+    <style>
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+        div {
+            text-align: center;
+        }
+        #logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        #main-text {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+        }
+        body {
+            background-color: #212121;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <html lang="en">
     <head>
-        <link
-            rel="icon"
-            href="https://raw.githubusercontent.com/theshmunguss1/RamOS/main/images/favicon.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coming soon! | RamOS Web</title>
+    </head>
+    <body>
+        <p>
+            <p id="main-text">This is a very early version of RamOS made for the developers. If you are a user that happened to stumble upon this, we kindly ask you to redirect to <a href="https://github.com/theshmunguss1/RamHub/">this page</a>.</p>
+            <img src="logo.png" alt="RamWorks logo" id="logo">
+        </body>
+    <ul>
         <style>
-            h1 {
-                text-align: center;
-            }
-            p {
-                text-align: center;
-            }
-            div {
-                text-align: center;
-            }
-            #logo {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                width: 50%;
-            }
-            #main-text {
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                color: white;
-            }
             body {
-                background-color: #212121;
+                margin: 0;
+                padding: 0;
             }
-            
+
+            .taskbar {
+                background-color: #333;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: Verdana, sans-serif;
+                color: #fff;
+                text-decoration: none;
+            }
+
+            .taskbar .task {
+                margin: 0 10px;
+                padding: 10px;
+                border-radius: 5px;
+                background-color: #555;
+                cursor: pointer;
+
+            }
+
+            .taskbar .task:hover {
+                background-color: #777;
+            }
         </style>
     </head>
     <body>
-        <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Coming soon! | RamOS Web</title>
-            </head>
-            <body>
-                <p>
-                    <p id="main-text"> This is a very early version of RamOS made for the
-                        developers. If you are a user that happened to stumble upon this, we kindly ask you to
-                        redirect to
-                        <a href="https://github.com/theshmunguss1/RamHub/">this page</a>.</p>
-                    <img src="logo.png" alt="RamWorks logo" id="logo"> 
-
-                </body>
-            <ul>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    
-    .taskbar {
-      background-color: #333;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Verdana, sans-serif;
-      color: #fff;
-      text-decoration: none;
-    }
-    
-    .taskbar .task {
-      margin: 0 10px;
-      padding: 10px;
-      border-radius: 5px;
-      background-color: #555;
-      cursor: pointer;
-      
-    }
-    
-    .taskbar .task:hover {
-      background-color: #777;
-    }
-  </style>
-</head>
-<body>
-  <div class="taskbar">
-    <a href="astroidv3.html" class="task">Astroid V3</a>
-
-  </div>
-</ul>
-            </html>
+        <div class="taskbar">
+            <a href="astroidv3.html" class="task">Astroid V3</a>
+        </div>
+    </ul>
+</html>
