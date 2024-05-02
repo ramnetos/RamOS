@@ -11,3 +11,4 @@ _Not in any order, but we need to code it first._
 ### Completed
 - [x]  Make README.MD
 - [x]  Properly get Github Pages working
+- [X]  Get a (Somewhat) working beta out
