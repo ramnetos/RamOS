@@ -22,10 +22,17 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: white;
         }
+        .italics {
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+            font-style: italic;
+
+        }
         body {
             background-color: #212121;
         }
-        a {
+        taskbar {
             text-decoration: none;
             color: inherit;
         }
@@ -42,7 +49,7 @@
         <p>
             <p id="main-text">Welcome to the earliest true version of RamOS. Please explore the small site, but expect bugs and errors... please report them once they are found.</p>
             <img src="logo.png" alt="RamWorks logo" id="logo">
-    <i> RamOS Web Early Access v1.0.0 </i>   
+            <p id="italics">RamOS Web Early Access v1.0.0</p>   
     </body>
     <ul>
         <style>
@@ -82,8 +89,8 @@
     </head>
     <body>
         <div class="taskbar">
-            <a href="astroidv3.html" class="task">Astroid</a>
-            <a href="dogeub4.html" class="task">Doge Unblocker</a>
+            <p id="taskbar"><a href="astroidv3.html" class="task">Astroid</a>
+            <p id="taskbar"><a href="dogeub4.html" class="task">Doge Unblocker</a>
         </div>
     </ul>
 </html>
