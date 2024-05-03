@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3kho Games</title>
+    <link rel="stylesheet" href="iframe.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <iframe src="https://lite.3kh0.net/projects" frameborder="0" class="iframe" id="frame"></iframe>
+    <button onclick="resetframe();">Back to games</button>
+</body>
+<script>
+    function resetframe(){
+        $("#frame").attr("src", "https://lite.3kh0.net/projects");
+    }
+</script>
+</html>
