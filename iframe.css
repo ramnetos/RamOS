@@ -1,8 +1,21 @@
-iframe {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
+.iframe, #iframe, iframe, .frame, #frame {
+margin: 0;
+padding: 0;
+border: 0;
+width: 100%;
+height: 100%;
+display: block;
+}
+body, html {
+margin: 0;
+padding: 0;
+height: 100%;
+}
+.iframe {
+margin: 0px;
+padding: 0px;
+border: 0px;
+width: 100%;
+height: 100%;
+display: block;
 }
