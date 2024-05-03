@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="height: 100%; margin: 0; padding: 0;">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3kho Games</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
-        body{
+        body, html {
             margin: 0;
             padding: 0;
+            height: 100%;
         }
         .iframe {
             margin: 0px;
@@ -15,16 +16,12 @@
             border: 0px;
             width: 100%;
             height: 100%;
+            display: block;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://lite.3kh0.net/projects" frameborder="0" class="iframe" id="frame" width="100%" height="100%"></iframe>
+    <iframe src="https://lite.3kh0.net/projects" frameborder="0" class="iframe" id="frame"></iframe>
     <!--<button onclick="resetframe();">Back to games</button>-->
 </body>
-<script>
-    function resetframe(){
-        $("#frame").attr("src", "https://lite.3kh0.net/projects");
-    }
-</script>
 </html>
