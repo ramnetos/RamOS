@@ -47,6 +47,8 @@
             background-color: transparent;
             border: 2px solid #d0d0d0;
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            display: flex;
+            align-items: center;
         }
         .taskbar .task:hover {
             background-color: #d0d0d0;
@@ -57,6 +59,11 @@
             background-color: #007bff;
             color: white;
             border-color: #007bff;
+        }
+        .taskbar .task img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
         }
         .upload-button {
             display: block;
@@ -121,10 +128,22 @@
     <p><i>RamOS Web Early Access v1.0.1</i></p>
 
     <div class="taskbar">
-        <a href="astroidv3.html" class="task">Astroid</a>
-        <a href="dogeub4.html" class="task">Doge Unblocker</a>
-         <a href="incognito.html" class="task">Incognito</a>
-        <a href="graphing.html" class="task">Graphing Calculator</a>
+        <a href="astroidv3.html" class="task">
+            <img src="astroid-icon.png" alt="Astroid Icon">
+            Astroid
+        </a>
+        <a href="dogeub4.html" class="task">
+            <img src="doge-icon.png" alt="Doge Unblocker Icon">
+            Doge Unblocker
+        </a>
+        <a href="incognito.html" class="task">
+            <img src="incognito-icon.png" alt="Incognito Icon">
+            Incognito
+        </a>
+        <a href="graphing.html" class="task">
+            <img src="graphing-icon.png" alt="Graphing Calculator Icon">
+            Graphing Calculator
+        </a>
         <label for="background-upload" class="upload-button">Change Background</label>
         <input type="file" id="background-upload" accept="image/*" onchange="handleBackgroundUpload()">
     </div>
