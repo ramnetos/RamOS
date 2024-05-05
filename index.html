@@ -12,6 +12,9 @@
             padding: 0;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: white;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         h1, p, div {
             text-align: center;
@@ -53,7 +56,7 @@
         }
         .upload-button {
             display: block;
-            margin: 20px auto;
+            margin: 0 10px; /* Adjust the margin as needed */
             padding: 10px 20px;
             border-radius: 5px;
             background-color: #555;
@@ -95,11 +98,8 @@
         <a href="dogeub4.html" class="task">Doge Unblocker</a>
         <a href="incognito.html" class="task">Incognito</a>
         <a href="3kho.html" class="task">3kho Games</a>
-        <a href="graphing.html" class="task">Graphing Calculator</a>
+        <label for="background-upload" class="upload-button">Upload Background Image</label>
+        <input type="file" id="background-upload" onchange="handleBackgroundUpload()">
     </div>
-
-    <!-- Only display the styled button -->
-    <label for="background-upload" class="upload-button">Upload Background Image</label>
-    <input type="file" id="background-upload" onchange="handleBackgroundUpload()">
 </body>
 </html>
