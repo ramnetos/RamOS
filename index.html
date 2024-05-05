@@ -7,6 +7,7 @@
     <link rel="icon" href="https://raw.githubusercontent.com/theshmunguss1/RamOS/main/images/favicon.ico">
     <style>
         body {
+            background-color: #808080;
             margin: 0;
             padding: 0;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -44,8 +45,23 @@
             border-radius: 5px;
             background-color: #555;
             cursor: pointer;
+            color: white;
+            text-decoration: none;
         }
         .taskbar .task:hover {
+            background-color: #777;
+        }
+        .upload-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #555;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .upload-button:hover {
             background-color: #777;
         }
     </style>
@@ -79,5 +95,6 @@
     </div>
 
     <input type="file" id="background-upload" onchange="handleBackgroundUpload()">
+    <label for="background-upload" class="upload-button">Upload Background Image</label>
 </body>
 </html>
