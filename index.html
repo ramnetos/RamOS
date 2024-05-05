@@ -101,7 +101,9 @@
 
         function adaptTextColor() {
             const body = document.body;
-            const rgb = getComputedStyle(body).backgroundColor.match(/\d+/g);
+            const computedStyle = getComputedStyle(body);
+            const backgroundColor = computedStyle.backgroundColor;
+            const rgb = backgroundColor.match(/\d+/g);
             const brightness = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
 
             if (brightness > 125) {
@@ -121,9 +123,10 @@
     <div class="taskbar">
         <a href="astroidv3.html" class="task">Astroid</a>
         <a href="dogeub4.html" class="task">Doge Unblocker</a>
-        <a href="incognito.html" class="task">Incognito Mode</a>
-        <input type="file" id="background-upload" onchange="handleBackgroundUpload()">
+        <a href="snakev2.html" class="task">Snake</a>
+        <a href="pong.html" class="task">Pong</a>
         <label for="background-upload" class="upload-button">Change Background</label>
+        <input type="file" id="background-upload" accept="image/*" onchange="handleBackgroundUpload()">
     </div>
 
     <script>
