@@ -7,7 +7,6 @@
     <link rel="icon" href="https://raw.githubusercontent.com/theshmunguss1/RamOS/main/images/favicon.ico">
     <style>
         body {
-            background-color: #212121;
             margin: 0;
             padding: 0;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -50,6 +49,20 @@
             background-color: #777;
         }
     </style>
+    <script>
+        function handleBackgroundUpload() {
+            const fileInput = document.getElementById('background-upload');
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const backgroundImage = e.target.result;
+                document.body.style.backgroundImage = `url(${backgroundImage})`;
+            }
+
+            reader.readAsDataURL(file);
+        }
+    </script>
 </head>
 <body>
     <h1>Welcome to the earliest true version of RamOS</h1>
@@ -64,5 +77,7 @@
         <a href="3kho.html" class="task">3kho Games</a>
         <a href="graphing.html" class="task">Graphing Calculator</a>
     </div>
+
+    <input type="file" id="background-upload" onchange="handleBackgroundUpload()">
 </body>
 </html>
