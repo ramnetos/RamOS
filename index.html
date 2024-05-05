@@ -64,6 +64,10 @@
         .upload-button:hover {
             background-color: #777;
         }
+        /* Hide the default file input */
+        #background-upload {
+            display: none;
+        }
     </style>
     <script>
         function handleBackgroundUpload() {
@@ -94,7 +98,8 @@
         <a href="graphing.html" class="task">Graphing Calculator</a>
     </div>
 
-    <input type="file" id="background-upload" onchange="handleBackgroundUpload()">
+    <!-- Only display the styled button -->
     <label for="background-upload" class="upload-button">Upload Background Image</label>
+    <input type="file" id="background-upload" onchange="handleBackgroundUpload()">
 </body>
 </html>
