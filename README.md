@@ -2,7 +2,7 @@
 # RamOS
 RamOS is a web-based operating system with games, movies, proxies & more.
 
-[BUG REPORT FORM](https://forms.gle/J9ngh7xiP5cMVs9y6)
+[BUG REPORT FORM](https://forms.gle/J9ngh7xiP5cMVs9y6) p.s we need access 
 
 ## Announcements
 Logo voting has closed and submissions will no longer be accepted.
