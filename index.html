@@ -178,8 +178,12 @@
         localStorage.setItem('hasClicked', true);
         
         // Apply the "clicked" class to the image
-        var image = document.getElementById('clickable-image');
         image.classList.add('clicked');
+        
+        // Remove the "clicked" class after a short delay to trigger the smooth transition back to the original size
+        setTimeout(function() {
+          image.classList.remove('clicked');
+        }, 200);
       }
     }
   </script>
