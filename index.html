@@ -155,7 +155,7 @@
     <p><i>RamOS Web Early Access v1.0.3</i></p>
 
     <p>Claim your cake below for Ram Networks' first birthday on May 9!</p>
-<style>
+    <style>
   .clickable-image {
     transition: transform 0.2s ease-in-out;
   }
@@ -172,12 +172,6 @@
     if (localStorage.getItem('hasClicked')) {
       alert('You have already claimed your cake!');
     } else {
-      // Display the message
-      alert('You claimed your cake!');
-
-      // Set a flag in localStorage to indicate that the user has clicked
-      localStorage.setItem('hasClicked', true);
-
       // Retrieve the image element
       var image = document.getElementById('clickable-image');
 
@@ -187,6 +181,12 @@
       // Remove the "clicked" class after a short delay to trigger the smooth transition back to the original size
       setTimeout(function () {
         image.classList.remove('clicked');
+
+        // Display the message
+        alert('You claimed your cake!');
+
+        // Set a flag in localStorage to indicate that the user has clicked
+        localStorage.setItem('hasClicked', true);
       }, 200);
     }
   }
@@ -196,7 +196,10 @@
   <img
     id="clickable-image"
     class="clickable-image"
-    src="https://raw.githubusercontent.com/ramnetos/RamOS/main/images/image8.png"
+    class="center"
+    width="300"
+    height="300"
+    src="https://raw.githubusercontent.com/ramnetos/RamOS/main/images/cake.png"
     alt="Clickable Image"
     onclick="handleClick()"
     style="cursor: pointer;"
