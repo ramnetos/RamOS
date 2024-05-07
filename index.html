@@ -155,40 +155,50 @@
     <p><i>RamOS Web Early Access v1.0.3</i></p>
 
     <p>Claim your cake below for Ram Networks' first birthday on May 9!</p>
-  <style>
-    .clickable-image {
-      transition: transform 0.2s ease-in-out;
+
+    <style>
+  .clickable-image {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .clickable-image.clicked {
+    transform: scale(0.9);
+    transition: transform 0.2s ease-in-out;
+  }
+</style>
+
+<script>
+  function handleClick() {
+    // Check if the user has already clicked
+    if (localStorage.getItem('hasClicked')) {
+      alert('You have already claimed your cake!');
+    } else {
+      // Display the message
+      alert('You claimed your cake!');
+
+      // Set a flag in localStorage to indicate that the user has clicked
+      localStorage.setItem('hasClicked', true);
+
+      // Apply the "clicked" class to the image
+      image.classList.add('clicked');
+
+      // Remove the "clicked" class after a short delay to trigger the smooth transition back to the original size
+      setTimeout(function () {
+        image.classList.remove('clicked');
+      }, 200);
     }
-    
-    .clickable-image.clicked {
-      transform: scale(0.9);
-      transition: transform 0s;
-    }
-  </style>
-  <script>
-    function handleClick() {
-      // Check if the user has already clicked
-      if (localStorage.getItem('hasClicked')) {
-        alert('You have already claimed your cake!');
-      } else {
-        // Display the message
-        alert('You claimed your cake!');
-        
-        // Set a flag in localStorage to indicate that the user has clicked
-        localStorage.setItem('hasClicked', true);
-        
-        // Apply the "clicked" class to the image
-        image.classList.add('clicked');
-        
-        // Remove the "clicked" class after a short delay to trigger the smooth transition back to the original size
-        setTimeout(function() {
-          image.classList.remove('clicked');
-        }, 200);
-      }
-    }
-  </script>
+  }
+</script>
+
 <body>
-  <img id="clickable-image" class="clickable-image" src="https://raw.githubusercontent.com/ramnetos/RamOS/main/images/cake.png" alt="Clickable Image" onclick="handleClick()" style="cursor: pointer;">
+  <img
+    id="clickable-image"
+    class="clickable-image"
+    src="https://raw.githubusercontent.com/ramnetos/RamOS/main/images/cake.png"
+    alt="Clickable Image"
+    onclick="handleClick()"
+    style="cursor: pointer;"
+  >
 </body>
     
     <div class="taskbar">
