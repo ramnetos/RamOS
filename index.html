@@ -155,8 +155,7 @@
     <p><i>RamOS Web Early Access v1.0.3</i></p>
 
     <p>Claim your cake below for Ram Networks' first birthday on May 9!</p>
-
-    <style>
+<style>
   .clickable-image {
     transition: transform 0.2s ease-in-out;
   }
@@ -178,6 +177,9 @@
 
       // Set a flag in localStorage to indicate that the user has clicked
       localStorage.setItem('hasClicked', true);
+
+      // Retrieve the image element
+      var image = document.getElementById('clickable-image');
 
       // Apply the "clicked" class to the image
       image.classList.add('clicked');
