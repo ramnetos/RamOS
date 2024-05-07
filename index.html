@@ -7,8 +7,11 @@
     <link rel="icon" href="https://raw.githubusercontent.com/theshmunguss1/RamOS/main/images/favicon.ico">
     <style>
         body {
-            background-color: #f0f0f0;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
             font-family: "Helvetica Neue", Arial, sans-serif;
+            color: #333;
         }
         
         h1 {
@@ -30,13 +33,24 @@
             max-width: 400px;
         }
         
+        a {
+            text-align: center;
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #0056b3;
+        }
+        
         .taskbar {
             background-color: #f0f0f0;
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 60px;
+            height: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -51,8 +65,8 @@
             padding: 8px 16px;
             border-radius: 20px;
             background-color: transparent;
-            border: none;
-            transition: background-color 0.3s, color 0.3s;
+            border: 2px solid #d0d0d0;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
             display: flex;
             align-items: center;
         }
@@ -60,11 +74,13 @@
         .taskbar .task:hover {
             background-color: #d0d0d0;
             color: #333;
+            border-color: #d0d0d0;
         }
         
         .taskbar .task:active {
             background-color: #007bff;
             color: white;
+            border-color: #007bff;
         }
         
         .taskbar .task img {
@@ -139,157 +155,91 @@
     <p><i>RamOS Web Early Access v1.0.3</i></p>
 
     <p>Claim your cake below for Ram Networks' first birthday on May 9!</p>
-    
-    <img
-        id="clickable-image"
-        class="clickable-image"
-        class="center"
-        width="Apologies for the incomplete response. Here's the complete modified code with the Mac OS-like styling:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RamOS Web | Early Access</title>
-    <link rel="icon" href="https://raw.githubusercontent.com/theshmunguss1/RamOS/main/images/favicon.ico">
     <style>
-        body {
-            background-color: #f0f0f0;
-            font-family: "Helvetica Neue", Arial, sans-serif;
-        }
-        
-        h1 {
-            text-align: center;
-            font-size: 28px;
-            margin-top: 40px;
-        }
-        
-        p {
-            text-align: center;
-            font-size: 18px;
-            margin-top: 20px;
-        }
-        
-        #logo {
-            display: block;
-            margin: 0 auto;
-            width: 50%;
-            max-width: 400px;
-        }
-        
-        .taskbar {
-            background-color: #f0f0f0;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: "Helvetica Neue", Arial, sans-serif;
-            color: #333;
-            text-decoration: none;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .taskbar .task {
-            margin: 0 10px;
-            padding: 8px 16px;
-            border-radius: 20px;
-            background-color: transparent;
-            border: none;
-            transition: background-color 0.3s, color 0.3s;
-            display: flex;
-            align-items: center;
-        }
-        
-        .taskbar .task:hover {
-            background-color: #d0d0d0;
-            color: #333;
-        }
-        
-        .taskbar .task:active {
-            background-color: #007bff;
-            color: white;
-        }
-        
-        .taskbar .task img {
-            width: 20px;
-            height: 20px;
-            margin-right: 5px;
-        }
-        
-        .upload-button {
-            display: inline-block;
-            margin: 0 10px;
-            padding: 8px 16px;
-            border-radius: 20px;
-            background-color: transparent;
-            border: 2px solid #007bff;
-            color: #007bff;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-        }
-        
-        .upload-button:hover {
-            background-color: #007bff;
-            color: white;
-            border-color: #007bff;
-        }
-        
-        .upload-button:active {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
-        
-        /* Hide the default file input */
-        #background-upload {
-            display: none;
-        }
-    </style>
-    <script>
-        function handleBackgroundUpload() {
-            const fileInput = document.getElementById('background-upload');
-            const file = fileInput.files[0];
-            const reader = new FileReader();
+  .clickable-image {
+    transition: transform 0.2s ease-in-out;
+  }
 
-            reader.onload = function(e) {
-                const backgroundImage = e.target.result;
-                document.body.style.backgroundImage = `url(${backgroundImage})`;
-                adaptTextColor();
-            }
+  .clickable-image.clicked {
+    transform: scale(0.9);
+    transition: transform 0.2s ease-in-out;
+  }
+</style>
 
-            reader.readAsDataURL(file);
-        }
+<script>
+  function handleClick() {
+    // Check if the user has already clicked
+    if (localStorage.getItem('hasClicked')) {
+      alert('You have already claimed your cake!');
+    } else {
+      // Retrieve the image element
+      var image = document.getElementById('clickable-image');
 
-        function adaptTextColor() {
-            const body = document.body;
-            const computedStyle = getComputedStyle(body);
-            const backgroundColor = computedStyle.backgroundColor;
-            const rgb = backgroundColor.match(/\d+/g);
-            const brightness = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
+      // Apply the "clicked" class to the image
+      image.classList.add('clicked');
 
-            if (brightness > 125) {
-                body.style.color = '#333';
-            } else {
-                body.style.color = '#f5f5f5';
-            }
-        }
-    </script>
-</head>
-<body>
-    <h1>Welcome to RamOS!</h1>
-    <p>Please explore the small site, but expect bugs and errors... please report them once they are found.</p>
-    <img src="logo.png" alt="RamWorks logo" id="logo">
-    <p><i>RamOS Web Early Access v1.0.3</i></p>
+      // Remove the "clicked" class after a short delay to trigger the smooth transition back to the original size
+      setTimeout(function () {
+        image.classList.remove('clicked');
 
-    <p>Claim your cake below for Ram Networks' first birthday on May 9!</p>
+        // Display the message
+        alert('You claimed your cake!');
+
+        // Set a flag in localStorage to indicate that the user has clicked
+        localStorage.setItem('hasClicked', true);
+      }, 200);
+    }
+  }
+</script>
+
+<style>
+  .clickable-image {
+    display: block;
+    margin: 0 auto;
+  }
+</style> 
     
-    <img
-        id="clickable-image"
-        class="clickable-image"
-        class
+<body>
+  <img
+    id="clickable-image"
+    class="clickable-image"
+    class="center"
+    width="300"
+    height="300"
+    src="https://raw.githubusercontent.com/ramnetos/RamOS/main/images/Untitleed.png"
+    alt="Clickable Image"
+    onclick="handleClick()"
+    style="cursor: pointer;"
+  >
+</body>
+    
+    <div class="taskbar">
+        <a href="astroidv3.html" class="task">
+            <img src="astroid-icon.png" alt="Astroid Icon">
+            Astroid
+        </a>
+        <a href="dogeub4.html" class="task">
+            <img src="doge-icon.png" alt="Doge Unblocker Icon">
+            Doge Unblocker
+        </a>
+        <a href="incognito.html" class="task">
+            <img src="incognito-icon.png" alt="Incognito Icon">
+            Incognito
+        </a>
+        <a href="graphing.html" class="task">
+            <img src="graphing-icon.png" alt="Graphing Calculator Icon">
+            Graphing Calculator
+        </a>
+        <a href="3kho.html" class="task">
+            <img src="3kho.png" alt="3kho Icon">
+            3kho games
+        </a>
+        <label for="background-upload" class="upload-button">Change Background</label>
+        <input type="file" id="background-upload" accept="image/*" onchange="handleBackgroundUpload()">
+    </div>
+
+    <script>
+        adaptTextColor();
+    </script>
+</body>
+</html>
