@@ -11,3 +11,13 @@ Logo voting has closed and submissions will no longer be accepted.
 - Incognito takes a long time to load, there is nothing we can do as we do not own their servers. Please be patient.
 - The same goes with Astroid.
 - Some websites on all proxies do not work, as they encrypt their data. We cannot do anything about this.
+- ## TODO
+- Add RammerHead
+- Add some sort of messaging software (Munster, Slack, Shanty, etc)
+- Add A Settings Menu (Theme, About:Blank, Favicon, etc)
+- Refine the Theming (Icons, MacOS Taskbar, etc)
+- Add Some sort of file system
+- Add a login page
+- Add a Top Taskbar thing
+- Add a VM
+- Add a way to save data
