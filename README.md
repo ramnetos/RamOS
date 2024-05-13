@@ -21,3 +21,4 @@ Logo voting has closed and submissions will no longer be accepted.
 - Add a Top Taskbar thing
 - Add a VM
 - Add a way to save data
+- Add MineCrap (Eaglercraft 1.8.8)
