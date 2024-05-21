@@ -15,7 +15,7 @@ Logo voting has closed and submissions will no longer be accepted.
 - Add RammerHead
 - Add some sort of messaging software (Munster, Slack, Shanty, etc)
 - Add A Settings Menu (Theme, About:Blank, Favicon, etc)
-- Refine the Theming (Icons, MacOS Taskbar, etc)
+- Refine the Theming (~~Icons~~, MacOS Taskbar, etc)
 - Add Some sort of file system
 - Add a login page
 - Add a Top Taskbar thing
@@ -23,4 +23,4 @@ Logo voting has closed and submissions will no longer be accepted.
 - Add a way to open, close, minimize & drag around windows on the desktop
 - Add a VM
 - Add a way to save data
-- Add MineCrap (Eaglercraft 1.8.8)
+- ~~Add MineCrap (Eaglercraft 1.8.8)~~
