@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--adding comment to redeploy-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RamOS Web | Early Access</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="icon" href="https://raw.githubusercontent.com/theshmunguss1/RamOS/main/images/favicon.ico">
     <style>
         body {
@@ -67,7 +67,6 @@
             border-radius: 20px;
             background-color: transparent;
             border: 2px solid #d0d0d0;
-            transition: ;
             display: flex;
             align-items: center;
             transition: transform 0.3s, margin 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s;
@@ -78,9 +77,11 @@
             background-color: #d0d0d0;
             color: #333;
             border-color: #d0d0d0;
-            transition: transform 0.3s, margin 0.3s;
+            transition: transform 0.3s, margin-left 0.3s margin-right 0.3s margin-bottom 0.3s;
             transform: scale(1.2);
-            margin: 3px 15px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-bottom: 30px;
         }
         
         .taskbar .task:active {
@@ -88,13 +89,30 @@
             color: white;
             border-color: #007bff;
         }
-        
+                
         .taskbar .task img {
             width: 20px;
             height: 20px;
             margin-right: 5px;
         }
-        
+        .task {
+        position: relative;
+        display: inline-block;
+        }
+
+        .task:hover::after {
+            content: attr(name);
+            position: absolute;
+            border-radius: 5px;
+            top: -2.5em;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: #fff;
+            padding: 0.2em;
+            font-size: 0.8em;
+            white-space: nowrap;
+        }
         .upload-button {
             display: inline-block;
             margin: 0 10px;
@@ -151,7 +169,7 @@
             } else {
                 body.style.color = '#f5f5f5';
             }
-        }
+        }    
     </script>
 </head>
 <body>
@@ -161,36 +179,31 @@
     <p><i>RamOS Web Early Access v1.0.3</i></p>
     
     <div class="taskbar">
-        <a href="astroidv3.html" class="task">
+        <!-- TO ADD A NEW APP: 
+        1. Add a new <a> tag with the href attribute set to the path of the app.
+        2. Add an <img> tag with the src attribute set to the path of the app's icon.
+        3. Add the name of the app as the value of the NAME attribute of the <a> tag. THE IMPORTANT STEP
+        -->
+        <a href="astroidv3.html" class="task" name="Astroid">
             <img src="./icon/astroid-icon.png" alt="Astroid Icon">
-            Astroid
         </a>
-        <a href="dogeub4.html" class="task">
+        <a href="dogeub4.html" class="task" name="Doge Unblocker">
             <img src="./icon/doge-icon.png" alt="Doge Unblocker Icon">
-            Doge Unblocker
         </a>
-        <a href="incognito.html" class="task">
+        <a href="incognito.html" class="task" name="Incognito">
             <img src="./icon/incognito-icon.png" alt="Incognito Icon">
-            Incognito
         </a>
-        <a href="graphing.html" class="task">
-            <img src="./icon/graphing-icon.png" alt="Graphing Calculator Icon">
-            Graphing Calculator
+        <a href="calc.html" class="task" name="Scientific Calculator">
+            <img src="./icon/graphing-icon.png" alt="Calculator Icon">
         </a>
-        <a href="3kho.html" class="task">
-            <img src="./icon/3kho.png" alt="3kho Icon">
-            3kho games
-        
+        <a href="3kho.html" class="task" name="3kho Games">
+            <img src="./icon/3kho.png" alt="3kho Icon">        
         </a>
-        <a href="eaglercraft.1.8.8.html" class="task">
+        <a href="eaglercraft.1.8.8.html" class="task" name="EaglerCraft">
             <img src="./icon/Eag.jpeg" alt="Minecrap Icon">
-            EaglerCraft
-                
         </a>
-        <a href="credits.html" class="task">
-            Credits
-            
-            
+        <a href="credits.html" class="task" name="Credits">
+            <img src="./icon/credits.png" alt="Credits Icon">
         </a>
         <label for="background-upload" class="upload-button">Change Background</label>        <input type="file" id="background-upload" accept="image/*" onchange="handleBackgroundUpload()">
     </div>
