@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RamOS Web | Early Access</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./taskbar.js"></script>
     <link rel="icon" href="https://raw.githubusercontent.com/theshmunguss1/RamOS/main/images/favicon.ico">
     <style>
         body {
@@ -179,34 +180,7 @@
     <img src="logo.png" alt="RamWorks logo" id="logo">
     <p><i>RamOS Web Early Access v1.0.3</i></p>
     
-    <div class="taskbar">
-        <!-- TO ADD A NEW APP: 
-        1. Add a new <a> tag with the href attribute set to the path of the app.
-        2. Add an <img> tag with the src attribute set to the path of the app's icon.
-        3. Add the name of the app as the value of the NAME attribute of the <a> tag. THE IMPORTANT STEP
-        -->
-        <a href="astroidv3.html" class="task" name="Astroid">
-            <img src="./icon/astroid-icon.png" alt="Astroid Icon">
-        </a>
-        <a href="dogeub4.html" class="task" name="Doge Unblocker">
-            <img src="./icon/doge-icon.png" alt="Doge Unblocker Icon">
-        </a>
-        <a href="incognito.html" class="task" name="Incognito">
-            <img src="./icon/incognito-icon.png" alt="Incognito Icon">
-        </a>
-        <a href="calc.html" class="task" name="Scientific Calculator">
-            <img src="./icon/graphing-icon.png" alt="Calculator Icon">
-        </a>
-        <a href="3kho.html" class="task" name="3kho Games">
-            <img src="./icon/3kho.png" alt="3kho Icon">        
-        </a>
-        <a href="eaglercraft.1.8.8.html" class="task" name="EaglerCraft">
-            <img src="./icon/Eag.jpeg" alt="Minecrap Icon">
-        </a>
-        <a href="credits.html" class="task" name="Credits">
-            <img src="./icon/credits.png" alt="Credits Icon">
-        </a>
-        <label for="background-upload" class="upload-button">Change Background</label>        <input type="file" id="background-upload" accept="image/*" onchange="handleBackgroundUpload()">
+    <div id="taskbar">
     </div>
 
     <script>
