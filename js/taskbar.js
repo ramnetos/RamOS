@@ -1,3 +1,3 @@
 $(function(){
-    $(".taskbar").load("./taskbar.html"); 
+    $(".taskbar").load("taskbar.html"); 
 });
