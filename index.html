@@ -156,7 +156,8 @@
         
     </style>
     <script>
-        $("#dialog").css("visibility: hidden;");
+        $("#dialog").dialog();
+        $("#dialog").dialog("close");
         function popup(){
             $("#dialog").dialog().css("visibility: visible;");
         }
