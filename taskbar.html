@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
 <style>
     body {
         background-color: #f5f5f5;
@@ -136,6 +140,14 @@
         display: none;
     }
 </style>
+
+<script>
+    $("#dialog").dialog().close();
+    function popup(){
+        $("#dialog").open();
+    }
+</script>
+
 <!-- TO ADD A NEW APP: 
 1. Add a new <a> tag with the href attribute set to the path of the app.
 2. Add an <img> tag with the src attribute set to the path of the app's icon.
@@ -164,7 +176,7 @@ Tips: ./ references files in the same directory. ../ references files up one dir
     <a href="./html/Snore.html" class="task" name="Snorlax Games">
         <img src="./icon/snore.jpeg" alt="Snorlax Icon">
       </a>
-    <a href="./html/Pop-Up.js" class="task" name="About us">
+    <a onclick="popup()" class="task" name="About us">
         <img src="./icon/L.jpeg" alt="Test Icon">
     </a>
     <a href="./html/eaglercraft.1.8.8.html" class="task" name="EaglerCraft">
@@ -175,4 +187,7 @@ Tips: ./ references files in the same directory. ../ references files up one dir
     </a>
     <label for="background-upload" class="upload-button">Change Background</label>        
     <input type="file" id="background-upload" accept="image/*" onchange="handleBackgroundUpload()">
+</div>
+<div id="dialog" title="Basic dialog">
+    <p>This is a diolouge test to see if im an epic gamer or if I'm shit at coding.</p>
 </div>
