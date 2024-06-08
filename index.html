@@ -156,9 +156,9 @@
         
     </style>
     <script>
-        $("#dialog").dialog().close();
+        $("#dialog").dialog("close");
         function popup(){
-            $("#dialog").open();
+            $("#dialog").dialog("open");
         }
         function handleBackgroundUpload() {
             const fileInput = document.getElementById('background-upload');
