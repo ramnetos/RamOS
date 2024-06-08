@@ -7,6 +7,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="taskbar.js"></script>
     <link rel="icon" href="https://raw.githubusercontent.com/theshmunguss1/RamOS/main/images/favicon.ico">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
     <style>
       
         body {
@@ -152,6 +156,10 @@
         
     </style>
     <script>
+        $("#dialog").dialog().close();
+        function popup(){
+            $("#dialog").open();
+        }
         function handleBackgroundUpload() {
             const fileInput = document.getElementById('background-upload');
             const file = fileInput.files[0];
@@ -194,4 +202,7 @@
         adaptTextColor();
     </script>
 </body>
+<div id="dialog" title="Basic dialog">
+    <p>This is a diolouge test to see if im an epic gamer or if I'm shit at coding.</p>
+</div>
 </html>
