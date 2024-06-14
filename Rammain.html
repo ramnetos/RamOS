@@ -1,0 +1,123 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="taskbar.js"></script>
+    <title>RamOS Web | Early Access</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/theshmunguss1/RamOS/main/images/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tourney:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="mainMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <div class="settings">
+        <ul style="list-style-type: none; font-size: medium;">
+            <li><strong>Settings</strong></li>
+            <li><label for="background-upload" class="upload-button">Image background</label>
+                <input type="file" id="background-upload" accept="image/*" onchange="handleBackgroundUpload()">
+            </li>
+            <li><button class="Tourney reset" onclick="pageTitle()">Set Tab Title</button>
+            </li>
+            <li><button class="Tourney" onclick="restoreDefault()">Restore Defaults</button>
+            </li>
+        </ul>
+        <script>
+            const mainMenu = document.querySelector('.mainMenu');
+            const settings = document.querySelector('.settings');
+            const body = document.body;
+            const footer = document.footer;
+            mainMenu.addEventListener('click', () => {
+                mainMenu.classList.toggle('active');
+                settings.classList.toggle('active');
+            });
+
+            function handleBackgroundUpload() {
+                const fileInput = document.getElementById('background-upload');
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const backgroundImage = e.target.result;
+                    document.body.style.backgroundImage = `url(${backgroundImage})`;
+                    adaptTextColor();
+                }
+
+                reader.readAsDataURL(file);
+            }
+
+            function adaptTextColor() {
+                const body = document.body;
+                const computedStyle = getComputedStyle(body);
+                const backgroundColor = computedStyle.backgroundColor;
+                const rgb = backgroundColor.match(/\d+/g);
+                const brightness = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
+
+                if (brightness > 125) {
+                    body.style.color = '#333';
+                } else {
+                    body.style.color = '#f5f5f5';
+                }
+            }
+        </script>
+    </div>
+    <div style="color: rgb(255, 255, 255);">
+        <h1>Welcome to RamOS!</h1>
+        <p>Expect bugs and errors, and if you come across them, report them <a href="https://github.com/ramnetos/RamOS/issues" style="color: rgb(0, 81, 255)">here</a>.</p>
+        <img alt="RamWorks logo" id="logo" src="logo.png">
+    </div>
+    <!--I was thinking using IFrames for moveable windows in the browser.
+      You would already have the HTML made and it  wouldn't take much more work. If so, put them here before the scrollbar:-->
+    <div class="scrollHeading1">
+        News, etc.
+    </div>
+    <div class="scrollbar_1">
+        <div class="scrollElement"><img src="images.jpg">News 1</div>
+        <div class="scrollElement"><img src="images.jpg">News 2</div>
+        <div class="scrollElement"><img src="images.jpg">News 3</div>
+        <div class="scrollElement"><img src="images.jpg">News 4</div>
+        <div class="scrollElement"><img src="images.jpg">News 5</div>
+        <!--Scrollbar- add or remove as necessary-->
+    </div>
+    <div class="taskContainer">
+    <div class="taskbar">
+        <a class="task" name="Home" href="./index.html">
+            <img alt="RamOS Icon" src="./icon/ramos.jpeg">
+        </a>
+        <a class="task" name="Astroid" href="./html/astroidv3.html">
+            <img alt="Astroid Icon" src="./icon/astroid-icon.png">
+        </a>
+        <a class="task" name="Doge Unblocker" href="./html/dogeub4.html">
+            <img alt="Doge Unblocker Icon" src="./icon/doge-icon.png">
+        </a>
+        <a class="task" name="Incognito" href="./html/incognito.html">
+            <img alt="Incognito Icon" src="./icon/incognito.png">
+        </a>
+        <a class="task" name="Scientific Calculator" href="./html/calc.html">
+            <img alt="Calculator Icon" src="./icon/graphing-icon.png">
+        </a>
+        <a class="task" name="3kho Games" href="./html/3kho.html">
+            <img alt='3kho Icon' src="./icon/3kho.png">
+        </a>
+        <a class='task' name='Snorlax Games' href='./html/Snore.html'>
+            <img alt='Snorlax Icon' src='./icon/snore.jpeg'>
+        </a>
+    </div>
+    </div>
+</body>
+
+<footer>
+    <i>RamOS Web Early Access v1.0.4</i>
+</footer>
+
+</html>
