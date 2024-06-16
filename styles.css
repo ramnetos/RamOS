@@ -116,6 +116,7 @@ a:hover {
     padding: 0.2em;
     font-size: 0.8em;
     white-space: nowrap;
+    z-index: 100;
 }
 
 .upload-button {
