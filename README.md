@@ -1,8 +1,8 @@
 # RamOS
-RamOS is a web-based operating system with games, movies, proxies & more.
+RamOS is a HTML web-based operating system with games, movies, proxies & more.
 
 ## Announcements
-Logo voting has closed and submissions will no longer be accepted.
+Expect infrequent updates over the summer.
 ## KNOWN ISSUES (1.0.4)
 **_DO NOT_** report these as issues.
 - Incognito takes a long time to load, there is nothing we can do as we do not own their servers. Please be patient.
