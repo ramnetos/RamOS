@@ -1,0 +1,329 @@
+.tourney {
+    font-family: "Tourney", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "wdth" 80.5;
+}
+
+@import "https://unpkg.com/openprops";
+
+body {
+    color: rgb(255, 255, 255);
+    background-image: url('ramBackground.png');
+    background-size: 100% auto;
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    z-index: 1;
+}
+
+p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px
+}
+
+#logo {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    max-width: 400px
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s
+}
+
+a:hover {
+    color: #0056b3
+}
+
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    width: 60%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+    text-decoration: none;
+    box-shadow: 0-2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 7;
+    border-radius:20px;
+    backdrop-filter: blur(10px);
+    margin: auto;
+}
+.taskContainer{
+    display:block;
+    position:fixed;
+    left:20%
+}
+.taskbar .task {
+    margin: 3px 10px;
+    padding: 8px 16px;
+    border-radius: 100px;
+    background-color: rgba(66, 66, 66, 0.418);
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s, margin 0.3s, color 0.3s;
+    transform: scale(1)
+}
+
+.taskbar .task:hover {
+    transition: transform 0.3s, margin-left 0.3s margin-right 0.3s margin-bottom 0.3s;
+    transform: scale(1.2);
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 30px
+}
+
+.taskbar .task:active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff
+}
+
+.taskbar .task img {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.task {
+    position: relative;
+    display: inline-block;
+    z-index: inherit;
+}
+
+.task:hover::after {
+    content: attr(name);
+    position: absolute;
+    border-radius: 5px;
+    top: -2.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 0.2em;
+    font-size: 0.8em;
+    white-space: nowrap;
+    z-index: 100;
+}
+
+.upload-button {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 16px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 2px solid #007bff;
+    color: #007bff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s
+}
+
+.upload-button:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff
+}
+
+.upload-button:active {
+    background-color: #0056b3;
+    border-color: #0056b3
+}
+
+#background-upload {
+    display: none
+}
+
+.github-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2)
+}
+
+h1 {
+    text-align: center;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    color: #ffffff;
+    align-items: center;
+    text-align: center;
+    max-width: 420px;
+    top: 0;
+    right: -420px;
+    font-size: 3rem;
+    transition: .3s ease;
+    background-image: linear-gradient(-90deg, rgb(25, 0, 31), rgba(18, 0, 22, 0.726), rgba(0, 0, 0, 0));
+    z-index: 10;
+}
+
+.settings.active {
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    color: #ffffff;
+    align-items: center;
+    max-width: 450px;
+    top: 0;
+    font-size: 3rem;
+    transition: .3s ease;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.mainMenu:hover {
+    cursor: pointer;
+}
+
+nav {
+    padding: 0.5rem;
+    display: flex;
+}
+
+.mainMenu {
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    position: relative;
+}
+
+.mainMenu span {
+    height: 5px;
+    width: 100%;
+    background-color: whitesmoke;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+    z-index: 11;
+}
+
+.mainMenu span:nth-child(1) {
+    top: 25%
+}
+
+.mainMenu span:nth-child(3) {
+    top: 75%
+}
+
+.mainMenu.active span:nth-child(1) {
+    top: 25%;
+    transform: translate(-50%, 100%) rotate(45deg);
+    position: absolute;
+}
+
+.mainMenu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mainMenu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -105%) rotate(-45deg);
+}
+
+.scrollbar_1 {
+    left: 96px;
+    display: grid;
+    gap: 48px;
+    grid-auto-flow: column;
+    grid-auto-columns: 20%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    position: absolute;
+    top: 60vh;
+    z-index: 2;
+    width: fit-content;
+}
+
+.scrollElement {
+    display: grid;
+    grid-template-rows: min-content;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(56, 56, 56, 0.267);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    text-align: center;
+    width: min-content;
+    border: 1px rgba(255, 255, 255, 0.1);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.scrollElement>img {
+    aspect-ratio: 16/9;
+    height: 15vh;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0);
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 25px;
+    background: #33526d;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+}
+
+.scrollheading1 {
+    display: block;
+    position: absolute;
+    top: 55vh;
+    padding-left: 100px;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    padding: 8px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    box-shadow: 2px 2px 2px black;
+    backdrop-filter: blur(5px);
+    font-size: large;
+}
