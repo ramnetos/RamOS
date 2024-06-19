@@ -1,25 +1,181 @@
-    <div class="taskContainer">
-    <div class="taskbar">
-        <a class="task" name="Home" href="./index.html">
-            <img alt="RamOS Icon" src="./icon/ramos.jpeg">
-        </a>
-        <a class="task" name="Astroid" href="./html/astroidv3.html">
-            <img alt="Astroid Icon" src="./icon/astroid-icon.png">
-        </a>
-        <a class="task" name="Doge Unblocker" href="./html/dogeub4.html">
-            <img alt="Doge Unblocker Icon" src="./icon/doge-icon.png">
-        </a>
-        <a class="task" name="Incognito" href="./html/incognito.html">
-            <img alt="Incognito Icon" src="./icon/incognito.png">
-        </a>
-        <a class="task" name="Scientific Calculator" href="./html/calc.html">
-            <img alt="Calculator Icon" src="./icon/graphing-icon.png">
-        </a>
-        <a class="task" name="3kho Games" href="./html/3kho.html">
-            <img alt='3kho Icon' src="./icon/3kho.png">
-        </a>
-        <a class='task' name='Snorlax Games' href='./html/Snore.html'>
-            <img alt='Snorlax Icon' src='./icon/snore.jpeg'>
-        </a>
-    </div>
-    </div>
+<style>
+    body {
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        color: #333;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 28px;
+        margin-top: 40px;
+    }
+
+    p {
+        text-align: center;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    #logo {
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+        max-width: 400px;
+    }
+
+    a {
+        text-align: center;
+        text-decoration: none;
+        color: #007bff;
+        transition: color 0.3s;
+    }
+
+    a:hover {
+        color: #0056b3;
+    }
+
+    .taskbar {
+        background-color: #f0f0f0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        color: #333;
+        text-decoration: none;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .taskbar .task {
+        margin: 3px 10px;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background-color: transparent;
+        border: 2px solid #d0d0d0;
+        display: flex;
+        align-items: center;
+        transition: transform 0.3s, margin 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s;
+        transform: scale(1);
+    }
+
+    .taskbar .task:hover {
+        background-color: #d0d0d0;
+        color: #333;
+        border-color: #d0d0d0;
+        transition: transform 0.3s, margin-left 0.3s margin-right 0.3s margin-bottom 0.3s;
+        transform: scale(1.2);
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 30px;
+    }
+
+    .taskbar .task:active {
+        background-color: #007bff;
+        color: white;
+        border-color: #007bff;
+    }
+            
+    .taskbar .task img {
+        width: 20px;
+        height: 20px;
+        margin-right: 2px;
+        margin-left: 2px;
+        border-radius: 4px;
+    }
+    .task {
+    position: relative;
+    display: inline-block;
+    }
+
+    .task:hover::after {
+        content: attr(name);
+        position: absolute;
+        border-radius: 5px;
+        top: -2.5em;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: #fff;
+        padding: 0.2em;
+        font-size: 0.8em;
+        white-space: nowrap;
+    }
+    .upload-button {
+        display: inline-block;
+        margin: 0 10px;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background-color: transparent;
+        border: 2px solid #007bff;
+        color: #007bff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    .upload-button:hover {
+        background-color: #007bff;
+        color: white;
+        border-color: #007bff;
+    }
+
+    .upload-button:active {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+    /* Hide the default file input */
+    #background-upload {
+        display: none;
+    }
+</style>
+
+
+
+<!-- TO ADD A NEW APP: 
+1. Add a new <a> tag with the href attribute set to the path of the app.
+2. Add an <img> tag with the src attribute set to the path of the app's icon.
+3. Add the name of the app as the value of the NAME attribute of the <a> tag. THE IMPORTANT STEP
+Tips: ./ references files in the same directory. ../ references files up one directory layer. ../ can stack.
+-->
+<div class="taskbar">
+    <a href="./index.html" class="task" name="Home">
+        <img src="./icon/ramos.jpeg" alt="RamOS Icon">
+    </a>
+    <a href="./html/astroidv3.html" class="task" name="Astroid">
+        <img src="./icon/astroid-icon.png" alt="Astroid Icon">
+    </a>
+    <a href="./html/dogeub4.html" class="task" name="Doge Unblocker">
+        <img src="./icon/doge-icon.png" alt="Doge Unblocker Icon">
+    </a>
+    <a href="./html/incognito.html" class="task" name="Incognito">
+        <img src="./icon/incognito.png" alt="Incognito Icon">
+    </a>
+    <a href="./html/calc.html" class="task" name="Scientific Calculator">
+        <img src="./icon/graphing-icon.png" alt="Calculator Icon">
+    </a>
+    <a href="./html/3kho.html" class="task" name="3kho Games">
+        <img src="./icon/3kho.png" alt="3kho Icon">
+           </a>
+    <a href="./html/Snore.html" class="task" name="Snorlax Games">
+        <img src="./icon/snore.jpeg" alt="Snorlax Icon">
+      </a>
+    <a onclick="popup()" class="task" name="About us">
+        <img src="./icon/L.jpeg" alt="Test Icon">
+    </a>
+    <a href="./html/eaglercraft.1.8.8.html" class="task" name="EaglerCraft">
+        <img src="./icon/Eag.jpeg" alt="Minecrap Icon">
+    </a>
+    <a href="credits.html" class="task" name="Credits">
+        <img src="./icon/credits.png" alt="Credits Icon">
+    </a>
+    <label for="background-upload" class="upload-button">Change Background</label>        
+    <input type="file" id="background-upload" accept="image/*" onchange="handleBackgroundUpload()">
+</div>
