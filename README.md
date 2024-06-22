@@ -17,7 +17,7 @@ Expect infrequent updates over the summer.
 - [x] Refine the theming (Icons, MacOS Taskbar, etc)
 - [ ] Add Some sort of file system
 - [ ] Add a login page
-- [ ] Add a Top Taskbar thing
+- [ ] Add a Top Taskbar thing (minimize, X button, etc)
 - [ ] Add a desktop
 - [ ] Add a way to open, close, minimize & drag around windows on the desktop
 - [ ] Add a VM
