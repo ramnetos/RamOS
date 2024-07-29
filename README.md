@@ -3,7 +3,7 @@ RamOS is a HTML web-based operating system with games, movies, proxies & more.
 
 ## Announcements
 Back in school August 26. Updates will release soon after, stay patient!
-## KNOWN ISSUES (1.0.5)
+## KNOWN ISSUES (1.1)
 **_DO NOT_** report these as issues.
 - Incognito takes a long time to load, there is nothing we can do as we do not own their servers. Please be patient.
 - The same goes with Astroid.
