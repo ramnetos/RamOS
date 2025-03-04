@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RamOS Web | Settings</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/theshmunguss1/RamOS/main/images/favicon.ico">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #logo {
+            display: block;
+            margin: 0 auto;
+            width: 50%;
+            max-width: 400px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            max-width: 600px;
+            width: 100%;
+            justify-items: center;
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            position: relative;
+            box-sizing: border-box;
+            border: 3px solid;
+            border-image: linear-gradient(20deg, grey, purple);
+            border-image-slice: 1;
+            height: 350px;
+            width: 300px;
+        }
+
+        #customFields {
+            margin-top: 10px;
+            display: none;
+        }
+
+        #customFields input {
+            width: 100%;
+            margin: 5px 0;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        select {
+            width: 100%;
+            padding: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Created by GoobisMoobis2 -->
+    <img src="https://raw.githubusercontent.com/ramnetos/RamOS/refs/heads/main/logo.png" alt="RamWorks logo" id="logo">
+    <h1>SETTINGS (Work In Progress)</h1>
+    <div class="grid-container">
+        <div class="grid-item">
+            <h2>About:Blank Tab Cloaker</h2>
+            <button onclick="openCustomBlankTab()">Open Tab</button>
+            <h3>Settings</h3>
+            <select id="typeOfCloak">
+                <option value="default">
+                    Do not cloak the tab
+                </option>
+                <option value="googledrive">
+                    Google Drive
+                </option>
+                <option value="canvas">
+                    Canvas
+                </option>
+                <option value="classroom">
+                    Google Classroom
+                </option>
+                <option value="google">
+                    Google
+                </option>
+                <option value="docs">
+                    Google Docs
+                </option>
+                <option value="custom">
+                    Custom
+                </option>
+            </select>
+            <div id="customFields">
+                <input type="text" id="customTitle" placeholder="Enter custom title">
+                <input type="text" id="customFavicon" placeholder="Enter custom favicon URL">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cloakSelect = document.getElementById('typeOfCloak');
+        const customFields = document.getElementById('customFields');
+        const customTitle = document.getElementById('customTitle');
+        const customFavicon = document.getElementById('customFavicon');
+
+        let pageTitle = "about:blank";
+        let faviconUrl = "";
+
+        cloakSelect.addEventListener('change', function() {
+            pageTitle = "";
+            faviconUrl = "";
+
+            customFields.style.display = 'none';
+
+            switch(this.value) {
+                case 'googledrive':
+                    pageTitle = "Home - Google Drive";
+                    faviconUrl = "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png";
+                    break;
+                case 'canvas':
+                    pageTitle = "Dashboard";
+                    faviconUrl = "https://raw.githubusercontent.com/instructure/canvas-lms/refs/heads/master/public/favicon.ico";
+                    break;
+                case 'classroom':
+                    pageTitle = "Home";
+                    faviconUrl = "https://upload.wikimedia.org/wikipedia/commons/1/19/Google_Classroom_Logo.svg";
+                    break;
+                case 'google':
+                    pageTitle = "Google";
+                    faviconUrl = "https://www.google.com/favicon.ico";
+                    break;
+                case 'docs':
+                    pageTitle = "Google Docs";
+                    faviconUrl = "https://upload.wikimedia.org/wikipedia/commons/e/ec/GDocs_Favicon_Recreation.png";
+                    break;
+                case 'custom':
+                    customFields.style.display = 'block';
+                    pageTitle = "Custom Tab";
+                    break;
+                default:
+                    pageTitle = "about:blank";
+                    faviconUrl = "";
+            }
+
+
+            if (this.value !== 'custom') {
+                console.log(`Page Title: ${pageTitle}, Favicon URL: ${faviconUrl}`);
+            }
+        });
+
+        customTitle.addEventListener('input', function() {
+            pageTitle = this.value || "Custom Tab";
+        });
+
+        customFavicon.addEventListener('input', function() {
+            faviconUrl = this.value || "";
+        });
+
+        function openCustomBlankTab() {
+            const newTab = window.open('about:blank', '_blank');
+            if (newTab) {
+
+                newTab.document.title = pageTitle || "New Tab";
+
+                if (faviconUrl) {
+                    const link = newTab.document.createElement('link');
+                    link.rel = 'icon';
+                    link.href = faviconUrl;
+                    newTab.document.head.appendChild(link);
+                }
+
+                const iframe = newTab.document.createElement('iframe');
+                iframe.src = 'https://ramnetos.github.io/RamOS/html/settings.html';
+                iframe.style.position = 'absolute';
+                iframe.style.top = '0';
+                iframe.style.left = '0';
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.border = 'none';
+
+                newTab.document.body.appendChild(iframe);
+            } else {
+                alert('An error occured.');
+            }
+        }
+    </script>
+</body>
+</html>
